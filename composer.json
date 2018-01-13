@@ -1,0 +1,23 @@
+{
+    "name": "michael/league-roster",
+    "type": "project",
+    "require": {
+        "slim/slim": "^3.9",
+        "j4mie/idiorm": "^1.5",
+        "j4mie/paris": "^1.5"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^6.5"
+    },
+    "autoload": {
+        "psr-4": {
+                "": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Michael McHolm",
+            "email": "mcholmm@gmail.com"
+        }
+    ]
+}

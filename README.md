@@ -1,2 +1,2 @@
-# league-roster
+# League Roster
 League Roster Software
