@@ -24,7 +24,7 @@ export class OrganizationService {
     return this.http.put<Organization>(this.organizationUrl + "/" + data.id, data);
   }
 
-  delete(data: Organization): Observable<Organization> {
+  delete(data: Organization): Observable<any> {
     return this.http.delete(this.organizationUrl + "/" + data.id);
   }
 }
