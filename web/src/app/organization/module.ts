@@ -1,20 +1,23 @@
 import { NgModule } from '@angular/core';
 import { CommonModule }   from '@angular/common';
 import { FormsModule }    from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
 
 import { OrganizationListComponent } from './list.component';
+import { OrganizationNewComponent } from './new.component';
+import { OrganizationEditComponent } from './edit.component';
+
 import { OrganizationRoutingModule } from './routing.module';
 import { OrganizationService } from './service';
 
 @NgModule({
   declarations: [
-    OrganizationListComponent
+    OrganizationListComponent,
+    OrganizationEditComponent,
+    OrganizationNewComponent
   ],
   imports: [
     CommonModule,
     FormsModule,
-    HttpClientModule,
     OrganizationRoutingModule
   ],
   providers: [OrganizationService]

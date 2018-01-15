@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { OrganizationService } from './service';
-import { Organization } from './organization'
+import { Organization } from './organization';
 
 @Component({
   templateUrl: './list.component.html',
