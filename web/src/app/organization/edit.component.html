@@ -3,7 +3,7 @@ Edit
 <form (ngSubmit)='onSubmit()' #organizationForm='ngForm' *ngIf="organization">
   <input type="text" required [(ngModel)]="organization.name" name="name">
   <input type="checkbox" [(ngModel)]="organization.active" name="active" [checked]="organization.active">
-  <input type="submit" value="Save" [disabled]="!organizationForm.form.valid"/>
-  <input type="button" value="Cancel" (click)="onCancel()">
-  <input type="button" value="Delete" (click)="onDelete()">
+  <input type="submit" value="Save" [disabled]="!organizationForm.form.valid" class='btn btn-primary'/>
+  <input type="button" value="Cancel" (click)="onCancel()" class='btn'>
+  <input type="button" value="Delete" (click)="onDelete()" class='btn btn-danger'>
 </form>
