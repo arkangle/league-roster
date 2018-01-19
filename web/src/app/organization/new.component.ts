@@ -4,7 +4,7 @@ import { OrganizationService } from './service';
 import { Organization } from './organization'
 
 @Component({
-  templateUrl: './new.component.html',
+  templateUrl: './modify.component.html',
   styleUrls: ['./component.css']
 })
 export class OrganizationNewComponent implements OnInit {

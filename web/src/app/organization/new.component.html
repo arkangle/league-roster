@@ -1,7 +1,0 @@
-New
-<form (ngSubmit)='onSubmit()' #organizationForm='ngForm'>
-  <input type="text" required [(ngModel)]="organization.name" name="name">
-  <input type="checkbox" [(ngModel)]="organization.active" name="active" [checked]="organization.active">
-  <input type="submit" value="Save" [disabled]="!organizationForm.form.valid" class='btn btn-primary'/>
-  <input type="button" value="Cancel" (click)="onCancel()" class='btn'>
-</form>
