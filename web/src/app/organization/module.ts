@@ -5,6 +5,7 @@ import { FormsModule }    from '@angular/forms';
 import { OrganizationListComponent } from './list.component';
 import { OrganizationNewComponent } from './new.component';
 import { OrganizationEditComponent } from './edit.component';
+import { OrganizationViewComponent } from './view.component';
 
 import { OrganizationRoutingModule } from './routing.module';
 import { OrganizationService } from './service';
@@ -16,6 +17,7 @@ import { AutoFocusDirective } from '../directives/autofocus';
     AutoFocusDirective,
     OrganizationListComponent,
     OrganizationEditComponent,
+    OrganizationViewComponent,
     OrganizationNewComponent
   ],
   imports: [
