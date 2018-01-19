@@ -8,7 +8,6 @@
       "root": "src",
       "outDir": "../public",
       "assets": [
-        "assets",
         "favicon.ico"
       ],
       "index": "index.html",
@@ -19,7 +18,9 @@
       "testTsconfig": "tsconfig.spec.json",
       "prefix": "app",
       "styles": [
-        "styles.css"
+        "styles.css",
+        "assets/css/bootstrap.min.css",
+        "assets/css/bootstrap-reboot.min.css"
       ],
       "scripts": [],
       "environmentSource": "environments/environment.ts",
