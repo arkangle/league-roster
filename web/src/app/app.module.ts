@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app.routing.module';
 
 import { OrganizationModule } from './organization/module';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { OrganizationModule } from './organization/module';
     BrowserModule,
     FormsModule,
     HttpClientModule,
+    NgbModule.forRoot(),
     OrganizationModule,
     AppRoutingModule
   ],
