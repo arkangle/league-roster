@@ -1,5 +1,5 @@
 export class Organization {
-  id: number;
+  id: number = -1;
   name: string;
-  active: boolean;
+  active: boolean = true;
 }

@@ -3,10 +3,6 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
-import { OrganizationListComponent } from './list.component';
-import { OrganizationNewComponent } from './new.component';
-import { OrganizationEditComponent } from './edit.component';
-import { OrganizationViewComponent } from './view.component';
 import { OrganizationMainComponent } from './main.component';
 import { OrganizationModifyComponent } from './modify.component';
 
@@ -18,18 +14,17 @@ import { AutoFocusDirective } from '../directives/autofocus';
 @NgModule({
   declarations: [
     AutoFocusDirective,
-    OrganizationListComponent,
-    OrganizationEditComponent,
-    OrganizationViewComponent,
     OrganizationMainComponent,
-    OrganizationModifyComponent,
-    OrganizationNewComponent
+    OrganizationModifyComponent
   ],
   imports: [
     CommonModule,
     FormsModule,
     NgbModule,
     OrganizationRoutingModule
+  ],
+  entryComponents: [
+    OrganizationModifyComponent
   ],
   providers: [OrganizationService]
 })
