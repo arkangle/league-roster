@@ -22,7 +22,7 @@ export class OrganizationMainComponent implements OnInit {
   }
   onEdit(organization) {
     const modal = this.modalService.open(OrganizationModifyComponent);
-    modal.componentInstance.organization = organization;
+    modal.componentInstance.organization = Object.assign({}, organization);
     modal.componentInstance.onSubmit.subscribe(($e) => {
       this.service.save($e).subscribe(data => {
         this.loadData();
@@ -44,23 +44,6 @@ export class OrganizationMainComponent implements OnInit {
     })
     modal.componentInstance.onCancel.subscribe(($e) => {
       modal.close();
-    })
-  }
-  onCancel() {
-  }
-  onCreate() {
-    this.service.create(this.currentOrganization).subscribe(data => {
-      this.loadData();
-    })
-  }
-  onSave() {
-    this.service.save(this.currentOrganization).subscribe(data => {
-      this.loadData();
-    })
-  }
-  onDelete(organization) {
-    this.service.delete(organization).subscribe(data => {
-      this.loadData();
     })
   }
 }
