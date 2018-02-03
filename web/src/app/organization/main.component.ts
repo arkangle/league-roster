@@ -46,4 +46,9 @@ export class OrganizationMainComponent implements OnInit {
       modal.close();
     })
   }
+  onDelete(organization) {
+    this.service.delete(organization).subscribe(data => {
+      this.loadData();
+    })
+  }
 }

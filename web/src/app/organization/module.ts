@@ -5,6 +5,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { OrganizationMainComponent } from './main.component';
 import { OrganizationModifyComponent } from './modify.component';
+import { OrganizationViewComponent } from './view.component';
 
 import { OrganizationRoutingModule } from './routing.module';
 import { OrganizationService } from './service';
@@ -15,6 +16,7 @@ import { AutoFocusDirective } from '../directives/autofocus';
   declarations: [
     AutoFocusDirective,
     OrganizationMainComponent,
+    OrganizationViewComponent,
     OrganizationModifyComponent
   ],
   imports: [

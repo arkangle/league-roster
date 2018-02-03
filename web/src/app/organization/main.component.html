@@ -3,8 +3,6 @@
   <h2 >League Roster</h2>
     <h4>Organizations</h4>
   </div>
-  <div class="text-center">
-  </div>
 </div>
 <div class="container">
 <table class="table table-striped">
@@ -15,7 +13,7 @@
     <th class="text-right"><a class="btn btn-outline-primary " role="button" (click)="onAdd()">Create New</a></th></tr>
   </thead>
     <tr *ngFor="let o of organizations">
-      <td>{{o.name}}</td>
+      <td routerLink='/organizations/{{o.id}}'>{{o.name}}</td>
       <td class="text-center"><span *ngIf="o.active"><input type="checkbox" disabled checked></span></td>
       <td class="text-right">
         <a class="btn btn-outline-primary" role="button" (click)="onEdit(o)">Edit</a>

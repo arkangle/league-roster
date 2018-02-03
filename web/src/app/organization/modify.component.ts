@@ -14,7 +14,6 @@ export class OrganizationModifyComponent {
   constructor(private service: OrganizationService) { }
   Submit() {
     this.onSubmit.emit(this.organization);
-    return false;
   }
   Cancel() {
     this.onCancel.emit();
