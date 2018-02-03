@@ -11,7 +11,6 @@ import { OrganizationModifyComponent } from './modify.component';
 export class OrganizationMainComponent implements OnInit {
   constructor(private service: OrganizationService, private modalService: NgbModal) { }
   private organizations: Organization[];
-  private currentOrganization: Organization;
   ngOnInit() {
     this.loadData();
   }
