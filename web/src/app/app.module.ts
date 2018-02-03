@@ -9,12 +9,25 @@ import { AutoFocusDirective } from './directives/autofocus';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app.routing.module';
 
-import { OrganizationModule } from './organization/module';
-import { LeagueModule } from './league/module';
+import { OrganizationMainComponent } from './organization/main.component';
+import { OrganizationModifyComponent } from './organization/modify.component';
+import { OrganizationViewComponent } from './organization/view.component';
+import { OrganizationService } from './organization/service';
+
+import { LeagueModifyComponent } from './league/modify.component';
+import { LeagueViewComponent } from './league/view.component';
+import { LeagueListComponent } from './league/list.component';
+import { LeagueService } from './league/service';
 
 @NgModule({
   declarations: [
     AutoFocusDirective,
+    OrganizationMainComponent,
+    OrganizationViewComponent,
+    OrganizationModifyComponent,
+    LeagueViewComponent,
+    LeagueListComponent,
+    LeagueModifyComponent,
     AppComponent
   ],
   imports: [
@@ -22,11 +35,15 @@ import { LeagueModule } from './league/module';
     FormsModule,
     HttpClientModule,
     NgbModule.forRoot(),
-    OrganizationModule,
-    LeagueModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [
+    OrganizationService,
+    LeagueService
+  ],
+  entryComponents: [
+    OrganizationModifyComponent
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
