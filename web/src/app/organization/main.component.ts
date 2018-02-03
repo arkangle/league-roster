@@ -20,7 +20,7 @@ export class OrganizationMainComponent implements OnInit {
       this.organizations = data;
     });
   }
-  onEdit(organization) {
+  runModal(organization) {
     const modal = this.modalService.open(OrganizationModifyComponent);
     modal.componentInstance.organization = Object.assign({}, organization);
     modal.componentInstance.onSubmit.subscribe(($e) => {
@@ -33,18 +33,11 @@ export class OrganizationMainComponent implements OnInit {
       modal.close();
     })
   }
+  onEdit(organization) {
+    this.runModal(organization);
+  }
   onAdd() {
-    const modal = this.modalService.open(OrganizationModifyComponent);
-    modal.componentInstance.organization = new Organization();
-    modal.componentInstance.onSubmit.subscribe(($e) => {
-      this.service.create($e).subscribe(data => {
-        this.loadData();
-        modal.close();
-      })
-    })
-    modal.componentInstance.onCancel.subscribe(($e) => {
-      modal.close();
-    })
+    this.runModal(new Organization());
   }
   onDelete(organization) {
     this.service.delete(organization).subscribe(data => {

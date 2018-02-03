@@ -10,11 +10,8 @@ import { OrganizationViewComponent } from './view.component';
 import { OrganizationRoutingModule } from './routing.module';
 import { OrganizationService } from './service';
 
-import { AutoFocusDirective } from '../directives/autofocus';
-
 @NgModule({
   declarations: [
-    AutoFocusDirective,
     OrganizationMainComponent,
     OrganizationViewComponent,
     OrganizationModifyComponent

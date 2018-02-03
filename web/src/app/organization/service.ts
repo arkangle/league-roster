@@ -20,8 +20,16 @@ export class OrganizationService {
     return this.http.post<Organization>(this.organizationUrl, data);
   }
 
-  save(data: Organization): Observable<Organization> {
+  update(data: Organization): Observable<Organization> {
     return this.http.put<Organization>(this.organizationUrl + "/" + data.id, data);
+  }
+
+  save(data: Organization): Observable<Organization> {
+    if(data.id == -1) {
+      return this.create(data);
+    } else {
+      return this.update(data);
+    }
   }
 
   delete(data: Organization): Observable<any> {
