@@ -42,7 +42,8 @@ import { LeagueService } from './league/service';
     LeagueService
   ],
   entryComponents: [
-    OrganizationModifyComponent
+    OrganizationModifyComponent,
+    LeagueModifyComponent
   ],
   bootstrap: [AppComponent]
 })

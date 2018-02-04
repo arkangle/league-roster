@@ -2,7 +2,7 @@
 namespace api;
 use \Psr\Http\Message\ServerRequestInterface as Request;
 use \Psr\Http\Message\ResponseInterface as Response;
-class Organization extends Base {
+class Organizations extends Base {
   function create(Request $request, Response $response) {
     $data = $request->getParsedBody();
     $organization = \model\Organization::create();

@@ -3,4 +3,4 @@
   <h4 *ngIf='organization'>{{organization.name}}</h4>
   </div>
 </div>
-<league-list></league-list>
+<league-list *ngIf='organization' [organization]='organization'></league-list>

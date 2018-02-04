@@ -5,7 +5,7 @@ import { Observable } from 'rxjs/Observable';
 
 @Injectable()
 export class OrganizationService {
-  private organizationUrl = '/api/organization';
+  private organizationUrl = '/api/organizations';
   constructor(private http: HttpClient) { }
 
   getList(): Observable<Organization[]> {

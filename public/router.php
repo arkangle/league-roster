@@ -11,13 +11,22 @@ $app->group('/api', function() {
   $this->get('/status', function (Request $request, Response $response, array $args) {
     return $response->withJson(array("status" => "OK"), 200);
   });
-  $this->group('/organization', function() {
-    $Organization = new \api\Organization();
-    $this->post('', array($Organization, "create"));
-    $this->get('', array($Organization, "list"));
-    $this->get('/{id}', array($Organization, "read"));
-    $this->delete('/{id}', array($Organization, "delete"));
-    $this->put('/{id}', array($Organization, "update"));
+  $this->group('/organizations', function() {
+    $Organizations = new \api\Organizations();
+    $Leagues = new \api\Leagues();
+    $this->post('', array($Organizations, "create"));
+    $this->get('', array($Organizations, "list"));
+    $this->get('/{id}', array($Organizations, "read"));
+    $this->delete('/{id}', array($Organizations, "delete"));
+    $this->put('/{id}', array($Organizations, "update"));
+    $this->get('/{id}/leagues', array($Leagues, "list"));
+    $this->post('/{id}/leagues', array($Leagues, "create"));
+  });
+  $this->group('/leagues', function() {
+    $Leagues = new \api\Leagues();
+    $this->get('/{id}', array($Leagues, "read"));
+    $this->delete('/{id}', array($Leagues, "delete"));
+    $this->put('/{id}', array($Leagues, "update"));
   });
 });
 $app->run();
