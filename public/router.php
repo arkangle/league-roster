@@ -24,9 +24,18 @@ $app->group('/api', function() {
   });
   $this->group('/leagues', function() {
     $Leagues = new \api\Leagues();
+    $Seasons = new \api\Seasons();
     $this->get('/{id}', array($Leagues, "read"));
     $this->delete('/{id}', array($Leagues, "delete"));
     $this->put('/{id}', array($Leagues, "update"));
+    $this->get('/{id}/seasons', array($Seasons, "list"));
+    $this->post('/{id}/seasons', array($Seasons, "create"));
+  });
+  $this->group('/seasons', function() {
+    $Seasons = new \api\Seasons();
+    $this->get('/{id}', array($Seasons, "read"));
+    $this->delete('/{id}', array($Seasons, "delete"));
+    $this->put('/{id}', array($Seasons, "update"));
   });
 });
 $app->run();

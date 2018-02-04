@@ -1,0 +1,16 @@
+<div class="container">
+<table class="table table-striped">
+  <thead>
+  <tr>
+    <th>Season</th>
+    <th class="text-right"><a class="btn btn-outline-primary " role="button" (click)="onAdd()">Create New</a></th></tr>
+  </thead>
+    <tr *ngFor="let season of seasons">
+      <td routerLink='/seasons/{{season.id}}'>{{season.name}}</td>
+      <td class="text-right">
+        <a class="btn btn-outline-primary" role="button" (click)="onEdit(season)">Edit</a>
+        <a class="btn btn-outline-danger" role="button" (click)="onDelete(season)">Del</a>
+      </td>
+    </tr>
+</table>
+</div>

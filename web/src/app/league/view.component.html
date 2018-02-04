@@ -3,3 +3,4 @@
   <h4 *ngIf='league'>{{league.name}}</h4>
   </div>
 </div>
+<season-list *ngIf='league' [league]='league'></season-list>
