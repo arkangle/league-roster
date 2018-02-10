@@ -10,8 +10,8 @@ export class LeagueService {
   private leagueUrl = '/api/leagues';
   constructor(private http: HttpClient) { }
 
-  getList(id): Observable<League[]> {
-    return this.http.get<League[]>(sprintf(this.leaguesUrl, id));
+  getList(organization_id): Observable<League[]> {
+    return this.http.get<League[]>(sprintf(this.leaguesUrl, organization_id));
   }
 
   get(id): Observable<League> {

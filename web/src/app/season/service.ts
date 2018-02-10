@@ -10,8 +10,8 @@ export class SeasonService {
   private seasonUrl = '/api/seasons';
   constructor(private http: HttpClient) { }
 
-  getList(id): Observable<Season[]> {
-    return this.http.get<Season[]>(sprintf(this.seasonsUrl, id));
+  getList(league_id): Observable<Season[]> {
+    return this.http.get<Season[]>(sprintf(this.seasonsUrl, league_id));
   }
 
   get(id): Observable<Season> {

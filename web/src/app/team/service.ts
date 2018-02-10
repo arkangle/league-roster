@@ -10,8 +10,8 @@ export class TeamService {
   private teamUrl = '/api/teams';
   constructor(private http: HttpClient) { }
 
-  getList(id): Observable<Team[]> {
-    return this.http.get<Team[]>(sprintf(this.teamsUrl, id));
+  getList(league_id): Observable<Team[]> {
+    return this.http.get<Team[]>(sprintf(this.teamsUrl, league_id));
   }
 
   get(id): Observable<Team> {
