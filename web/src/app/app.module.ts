@@ -24,6 +24,11 @@ import { SeasonViewComponent } from './season/view.component';
 import { SeasonListComponent } from './season/list.component';
 import { SeasonService } from './season/service';
 
+import { TeamModifyComponent } from './team/modify.component';
+import { TeamViewComponent } from './team/view.component';
+import { TeamListComponent } from './team/list.component';
+import { TeamService } from './team/service';
+
 @NgModule({
   declarations: [
     AutoFocusDirective,
@@ -36,6 +41,9 @@ import { SeasonService } from './season/service';
     SeasonViewComponent,
     SeasonListComponent,
     SeasonModifyComponent,
+    TeamViewComponent,
+    TeamListComponent,
+    TeamModifyComponent,
     AppComponent
   ],
   imports: [
@@ -48,12 +56,14 @@ import { SeasonService } from './season/service';
   providers: [
     OrganizationService,
     LeagueService,
-    SeasonService
+    SeasonService,
+    TeamService
   ],
   entryComponents: [
     OrganizationModifyComponent,
     LeagueModifyComponent,
-    SeasonModifyComponent
+    SeasonModifyComponent,
+    TeamModifyComponent
   ],
   bootstrap: [AppComponent]
 })
