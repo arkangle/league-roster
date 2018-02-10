@@ -42,9 +42,18 @@ $app->group('/api', function() {
   });
   $this->group('/teams', function() {
     $Teams = new \api\Teams();
+    $Coaches = new \api\Coaches();
     $this->get('/{id}', array($Teams, "read"));
     $this->delete('/{id}', array($Teams, "delete"));
     $this->put('/{id}', array($Teams, "update"));
+    $this->get('/{id}/coaches', array($Coaches, "list"));
+    $this->post('/{id}/coaches', array($Coaches, "create"));
+  });
+  $this->group('/coaches', function() {
+    $Coaches = new \api\Coaches();
+    $this->get('/{id}', array($Coaches, "read"));
+    $this->delete('/{id}', array($Coaches, "delete"));
+    $this->put('/{id}', array($Coaches, "update"));
   });
 });
 $app->run();

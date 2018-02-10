@@ -29,6 +29,11 @@ import { TeamViewComponent } from './team/view.component';
 import { TeamListComponent } from './team/list.component';
 import { TeamService } from './team/service';
 
+import { CoachModifyComponent } from './coach/modify.component';
+import { CoachViewComponent } from './coach/view.component';
+import { CoachListComponent } from './coach/list.component';
+import { CoachService } from './coach/service';
+
 @NgModule({
   declarations: [
     AutoFocusDirective,
@@ -44,6 +49,9 @@ import { TeamService } from './team/service';
     TeamViewComponent,
     TeamListComponent,
     TeamModifyComponent,
+    CoachViewComponent,
+    CoachListComponent,
+    CoachModifyComponent,
     AppComponent
   ],
   imports: [
@@ -57,13 +65,15 @@ import { TeamService } from './team/service';
     OrganizationService,
     LeagueService,
     SeasonService,
-    TeamService
+    TeamService,
+    CoachService
   ],
   entryComponents: [
     OrganizationModifyComponent,
     LeagueModifyComponent,
     SeasonModifyComponent,
-    TeamModifyComponent
+    TeamModifyComponent,
+    CoachModifyComponent
   ],
   bootstrap: [AppComponent]
 })

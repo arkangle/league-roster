@@ -1,0 +1,16 @@
+<div class="container">
+<table class="table table-striped">
+  <thead>
+  <tr>
+    <th>Coach</th>
+    <th class="text-right"><a class="btn btn-outline-primary " role="button" (click)="onAdd()">Create New</a></th></tr>
+  </thead>
+    <tr *ngFor="let coach of coaches">
+      <td routerLink='/coaches/{{coach.id}}'>{{coach.first_name}} {{coach.last_name}}</td>
+      <td class="text-right">
+        <a class="btn btn-outline-primary" role="button" (click)="onEdit(coach)">Edit</a>
+        <a class="btn btn-outline-danger" role="button" (click)="onDelete(coach)">Del</a>
+      </td>
+    </tr>
+</table>
+</div>

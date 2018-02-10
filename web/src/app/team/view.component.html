@@ -3,3 +3,4 @@
   <h4 *ngIf='team'>{{team.name}}</h4>
   </div>
 </div>
+<coach-list *ngIf='team' [team]='team'></coach-list>
