@@ -11,9 +11,15 @@ $app->group('/api', function() {
   $this->get('/status', function (Request $request, Response $response, array $args) {
     return $response->withJson(array("status" => "OK"), 200);
   });
-  $this->group('/organizations', function() {
-    $Organizations = new \api\Organizations();
-    $Leagues = new \api\Leagues();
+
+  $Organizations = new \api\Organizations();
+  $Leagues = new \api\Leagues();
+  $Seasons = new \api\Seasons();
+  $Teams = new \api\Teams();
+  $SeasonTeams = new \api\SeasonTeams();
+  $Coaches = new \api\Coaches();
+
+  $this->group('/organizations', function() use ($Organizations, $Leagues) {
     $this->post('', array($Organizations, "create"));
     $this->get('', array($Organizations, "list"));
     $this->get('/{id}', array($Organizations, "read"));
@@ -22,10 +28,7 @@ $app->group('/api', function() {
     $this->get('/{id}/leagues', array($Leagues, "list"));
     $this->post('/{id}/leagues', array($Leagues, "create"));
   });
-  $this->group('/leagues', function() {
-    $Leagues = new \api\Leagues();
-    $Seasons = new \api\Seasons();
-    $Teams = new \api\Teams();
+  $this->group('/leagues', function() use ($Leagues, $Seasons, $Teams) {
     $this->get('/{id}', array($Leagues, "read"));
     $this->delete('/{id}', array($Leagues, "delete"));
     $this->put('/{id}', array($Leagues, "update"));
@@ -34,23 +37,25 @@ $app->group('/api', function() {
     $this->get('/{id}/teams', array($Teams, "list"));
     $this->post('/{id}/teams', array($Teams, "create"));
   });
-  $this->group('/seasons', function() {
-    $Seasons = new \api\Seasons();
+  $this->group('/seasons', function() use ($Seasons, $SeasonTeams) {
     $this->get('/{id}', array($Seasons, "read"));
     $this->delete('/{id}', array($Seasons, "delete"));
     $this->put('/{id}', array($Seasons, "update"));
+    $this->get('/{id}/teams', array($SeasonTeams, "list"));
+    $this->post('/{id}/teams', array($SeasonTeams, "create"));
+    $this->group('/teams', function() use ($SeasonTeams) {
+      $this->delete('/{id}', array($SeasonTeams, "delete"));
+      $this->get('/{id}', array($SeasonTeams, "read"));
+    });
   });
-  $this->group('/teams', function() {
-    $Teams = new \api\Teams();
-    $Coaches = new \api\Coaches();
+  $this->group('/teams', function() use ($Teams, $Coaches) {
     $this->get('/{id}', array($Teams, "read"));
     $this->delete('/{id}', array($Teams, "delete"));
     $this->put('/{id}', array($Teams, "update"));
     $this->get('/{id}/coaches', array($Coaches, "list"));
     $this->post('/{id}/coaches', array($Coaches, "create"));
   });
-  $this->group('/coaches', function() {
-    $Coaches = new \api\Coaches();
+  $this->group('/coaches', function() use ($Coaches) {
     $this->get('/{id}', array($Coaches, "read"));
     $this->delete('/{id}', array($Coaches, "delete"));
     $this->put('/{id}', array($Coaches, "update"));
