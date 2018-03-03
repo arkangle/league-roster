@@ -42,6 +42,7 @@ $app->group('/api', function() {
     $this->delete('/{id}', array($Seasons, "delete"));
     $this->put('/{id}', array($Seasons, "update"));
     $this->get('/{id}/teams', array($SeasonTeams, "list"));
+    $this->get('/{id}/teams/remaining', array($SeasonTeams, "remaining"));
     $this->post('/{id}/teams', array($SeasonTeams, "create"));
     $this->group('/teams', function() use ($SeasonTeams) {
       $this->delete('/{id}', array($SeasonTeams, "delete"));

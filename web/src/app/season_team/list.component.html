@@ -1,0 +1,15 @@
+<div class="container">
+<table class="table table-striped">
+  <thead>
+  <tr>
+    <th>Team</th>
+    <th class="text-right"><a class="btn btn-outline-primary " role="button" (click)="onAdd()">Add</a></th></tr>
+  </thead>
+    <tr *ngFor="let season_team of season_teams">
+      <td routerLink='/seasons/teams/{{season_team.id}}'>{{season_team.team_name}}</td>
+      <td class="text-right">
+        <a class="btn btn-outline-danger" role="button" (click)="onDelete(season_team)">Del</a>
+      </td>
+    </tr>
+</table>
+</div>

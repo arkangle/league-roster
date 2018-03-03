@@ -29,6 +29,11 @@ import { TeamViewComponent } from './team/view.component';
 import { TeamListComponent } from './team/list.component';
 import { TeamService } from './team/service';
 
+import { SeasonTeamModifyComponent } from './season_team/modify.component';
+import { SeasonTeamViewComponent } from './season_team/view.component';
+import { SeasonTeamListComponent } from './season_team/list.component';
+import { SeasonTeamService } from './season_team/service';
+
 import { CoachModifyComponent } from './coach/modify.component';
 import { CoachViewComponent } from './coach/view.component';
 import { CoachListComponent } from './coach/list.component';
@@ -52,6 +57,9 @@ import { CoachService } from './coach/service';
     CoachViewComponent,
     CoachListComponent,
     CoachModifyComponent,
+    SeasonTeamViewComponent,
+    SeasonTeamListComponent,
+    SeasonTeamModifyComponent,
     AppComponent
   ],
   imports: [
@@ -66,6 +74,7 @@ import { CoachService } from './coach/service';
     LeagueService,
     SeasonService,
     TeamService,
+    SeasonTeamService,
     CoachService
   ],
   entryComponents: [
@@ -73,6 +82,7 @@ import { CoachService } from './coach/service';
     LeagueModifyComponent,
     SeasonModifyComponent,
     TeamModifyComponent,
+    SeasonTeamModifyComponent,
     CoachModifyComponent
   ],
   bootstrap: [AppComponent]

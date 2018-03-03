@@ -1,0 +1,17 @@
+<div class="modal-header">
+  <h5 class="modal-title">Team for Season</h5>
+</div>
+<form (ngSubmit)='Submit()' #season_teamForm='ngForm' *ngIf="season_team">
+  <div class="modal-body">
+    <div class="form-group ">
+      <label for="name" class="">Name</label>
+      <select class="form-control" [(ngModel)]="season_team.team_id" id="team_id" name="team_id" required>
+        <option *ngFor="let team of teams" [value]="team.id">{{team.name}}</option>
+      </select>
+    </div>
+  </div>
+  <div class="modal-footer text-center">
+    <input type="submit" value="Save" [disabled]="!season_teamForm.form.valid" class='btn btn-outline-primary'/>
+    <input type="button" value="Cancel" (click)="Cancel()" class='btn btn-outline-secondary'>
+  </div>
+</form>

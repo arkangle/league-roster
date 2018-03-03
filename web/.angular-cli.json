@@ -8,6 +8,8 @@
       "root": "src",
       "outDir": "../public",
       "assets": [
+        "router.php",
+        ".htaccess",
         "favicon.ico"
       ],
       "index": "index.html",
